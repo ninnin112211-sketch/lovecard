@@ -46,6 +46,7 @@ body {
     touch-action: none;
 }
 
+
 .scratch-container {
     position: relative;
     width: 400px;
@@ -57,8 +58,32 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 
-    overflow: hidden; /* เปลี่ยนจาก visible → ทำให้ดูเนียนขึ้น */
+    overflow: hidden;
 }
+.scratch-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Mali', cursive;
+    font-size: 20px;
+    color: #ff4d6d;
+
+    background: transparent;   /* ❌ เอากรอบขาวออก */
+    padding: 0;                /* ❌ เอากล่องออก */
+    border-radius: 0;          /* ❌ ไม่ต้องโค้ง */
+    box-shadow: none;          /* ❌ เอาเงาออก */
+
+    z-index: 2;
+}
+
+.scratch-text.hide{
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+    filter: blur(4px);
+}
+
 /* รูป */
 .hidden-image {
     position: absolute;
@@ -161,4 +186,5 @@ body {
         transform: translate(8px, -120vh) scale(1.2);
         opacity: 0;
     }
+    
 }
