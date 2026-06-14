@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>เพลงสำหรับเธอ 🎵</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Mali',cursive;
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #d7eef5,
+        #e9f8ff,
+        #fff6fa
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+    background:white;
+
+    text-decoration:none;
+    color:#ff77a8;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+}
+
+.container{
+    text-align:center;
+    padding:20px;
+}
+
+h1{
+    color:#444;
+    margin-bottom:25px;
+}
+
+.cassette{
+    font-size:150px;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.song-name{
+    margin-top:15px;
+    font-size:22px;
+    color:#ff77a8;
+    font-weight:bold;
+}
+
+.message{
+    margin-top:15px;
+    color:#666;
+    line-height:1.8;
+}
+
+audio{
+    margin-top:25px;
+    width:100%;
+    max-width:350px;
+}
+
+.home-btn{
+    display:inline-block;
+    margin-top:25px;
+
+    padding:12px 25px;
+
+    background:#ff77a8;
+    color:white;
+
+    text-decoration:none;
+    border-radius:30px;
+}
+.cassette-img{
+    width:250px;
+    max-width:80%;
+    animation:float 3s ease-in-out infinite;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="letter.html" class="back-btn">←</a>
+
+<div class="container">
+
+    <h1>🎵 เพลงนี้อยากให้เธอฟัง 🎵</h1>
+
+    <img src="gif.png" class="cassette-img" alt="Music">
+
+    <div class="song-name">
+        เพลงสำหรับคนพิเศษ 
+    </div>
+
+    <div class="message">
+        อยากส่งให้ฟัง<br>
+        หวังว่าจะชอบเพลงนี้นะ 
+    </div>
+
+<audio controls autoplay>
+    <source src="เพลงรัก.mp3" type="audio/mpeg">
+    เบราว์เซอร์ไม่รองรับการเล่นเพลง
+</audio>
+
+    <br>
+
+    <a href="menu.html" class="home-btn">
+         Menu
+    </a>
+
+</div>
+
+</body>
+</html>

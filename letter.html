@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ถึงเธอ 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Mali',cursive;
+    min-height:100vh;
+    background:linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff6fa,
+        #eafcff
+    );
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+}
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:white;
+    text-decoration:none;
+    color:#ff77a8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+}
+
+.container{
+    width:100%;
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-align:center;
+}
+
+.open-text{
+    color:#ff77a8;
+    margin-top:15px;
+}
+
+.card{
+    display:none;
+    width:90%;
+    max-width:500px;
+
+    margin:0 auto;
+
+    background:white;
+    padding:30px;
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+    animation:pop .8s ease;
+}
+
+.envelope{
+    font-size:180px;
+    cursor:pointer;
+    transition:.3s;
+    animation:bounce 2s infinite;
+}
+
+.envelope:hover{
+    transform:scale(1.1);
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.card h2{
+    color:#ff77a8;
+    margin-bottom:20px;
+}
+
+#message{
+    color:#666;
+    line-height:2;
+    min-height:220px;
+}
+#musicBtn{
+    display:none;
+
+    margin-top:25px;
+
+    border:none;
+    border-radius:30px;
+
+    padding:12px 25px;
+
+    background:linear-gradient(
+        135deg,
+        #ff9fc1,
+        #ff77a8
+    );
+
+    color:white;
+    font-family:'Mali',cursive;
+    font-size:18px;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(255,119,168,.3);
+
+    animation:pulse 1.5s infinite;
+}
+
+#musicBtn:hover{
+    transform:scale(1.05);
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.05);
+    }
+}
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    pointer-events:none;
+    animation:float 5s linear forwards;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+@media (max-width:480px){
+
+    .envelope{
+        font-size:170px;
+    }
+
+    .card{
+        width:95%;
+        padding:20px;
+    }
+
+    #message{
+        min-height:auto;
+        line-height:1.8;
+    }
+
+    .back-btn{
+        left:10px;
+        top:10px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="menu.html" class="back-btn">←</a>
+
+<div class="container">
+
+<div id="envelopeArea">
+    <div class="envelope" onclick="openLetter()">💌</div>
+  
+</div>
+
+<div class="card" id="card">
+    <h2>ถึงเธอ 💖</h2>
+
+    <div id="message"></div>
+
+<button id="musicBtn"
+        onclick="location.href='music.html'">
+    🎧 กดตรงนี้สิ...
+</button>
+
+</div>
+
+<script>
+
+const text = `
+
+ขอบคุณที่เข้ามาในชีวิตเรานะ
+
+ขอบคุณทุกครั้งที่ทำให้เรายิ้ม
+ขอบคุณทุกช่วงเวลาที่อยู่ข้างกัน
+
+บางวันอาจจะเหนื่อย
+บางวันอาจจะไม่เป็นอย่างที่หวัง
+
+แต่เราอยากให้เธอรู้ว่า
+
+เธอเป็นคนพิเศษมาก ๆ สำหรับเรา 💕
+
+และเราดีใจเสมอ
+ที่มีเธออยู่ในความทรงจำดี ๆ ของเรา 🌷
+
+`;
+
+function openLetter(){
+
+document.getElementById("envelopeArea").style.display="none";
+document.getElementById("card").style.display="block";
+
+let i = 0;
+
+function typeWriter(){
+
+if(i < text.length){
+
+    document.getElementById("message").innerHTML += text.charAt(i);
+
+    i++;
+
+    setTimeout(typeWriter,40);
+
+}else{
+
+    document.getElementById("musicBtn").style.display="inline-block";
+
+}
+
+}
+
+typeWriter();
+
+}
+
+setInterval(() => {
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["💖","💕","💗","🤍"];
+    heart.innerHTML =
+    hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+
+}, 600);
+
+</script>
+
+</body>
+</html>

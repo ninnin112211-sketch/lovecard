@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>เหตุผลที่รักเธอ ⭐</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Mali',cursive;
+    min-height:100vh;
+    background:linear-gradient(
+        180deg,
+        #2d3e70,
+        #4c5f9e,
+        #ffd6e7
+    );
+    overflow:hidden;
+}
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:white;
+    color:#ff77a8;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    z-index:100;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-top:30px;
+    text-shadow:0 0 10px rgba(255,255,255,.5);
+}
+
+.sky{
+    position:relative;
+    width:100%;
+    height:85vh;
+}
+
+.star{
+    position:absolute;
+    font-size:45px;
+    cursor:pointer;
+    transition:.3s;
+    user-select:none;
+}
+
+.star:hover{
+    transform:scale(1.3);
+}
+
+.clicked{
+    filter:drop-shadow(0 0 10px gold);
+}
+
+.reason-card{
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:420px;
+
+    background:white;
+    border-radius:25px;
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    display:none;
+    z-index:99;
+}
+
+.reason-card h2{
+    color:#ff77a8;
+    margin-bottom:10px;
+}
+
+.reason-card p{
+    color:#666;
+    line-height:1.8;
+}
+
+.close-btn{
+    margin-top:15px;
+    background:#ff77a8;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.final-message{
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,.95);
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    text-align:center;
+    padding:40px;
+
+    z-index:999;
+}
+
+.final-message h2{
+    color:#ff77a8;
+    margin-bottom:20px;
+}
+
+.final-message p{
+    color:#666;
+    font-size:20px;
+    line-height:2;
+}
+
+.twinkle{
+    position:absolute;
+    color:white;
+    animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.2;}
+    50%{opacity:1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="menu.html" class="back-btn">←</a>
+
+<h1>⭐ เหตุผลที่รักเธอ ⭐</h1>
+
+<div class="sky">
+
+    <div class="star" style="top:15%; left:20%;" onclick="showReason(this,0)">⭐</div>
+
+    <div class="star" style="top:25%; left:70%;" onclick="showReason(this,1)">⭐</div>
+
+    <div class="star" style="top:40%; left:35%;" onclick="showReason(this,2)">⭐</div>
+
+    <div class="star" style="top:55%; left:80%;" onclick="showReason(this,3)">⭐</div>
+
+    <div class="star" style="top:65%; left:15%;" onclick="showReason(this,4)">⭐</div>
+
+    <div class="star" style="top:75%; left:50%;" onclick="showReason(this,5)">⭐</div>
+
+    <div class="star" style="top:30%; left:50%;" onclick="showReason(this,6)">⭐</div>
+
+</div>
+
+<div class="reason-card" id="card">
+    <h2>🌷</h2>
+    <p id="reasonText"></p>
+    <button class="close-btn" onclick="closeCard()">ปิด</button>
+</div>
+
+<div class="final-message" id="final">
+
+    <h2>💖 ข้อสุดท้าย 💖</h2>
+
+    <p>
+    เธอรู้ไหม...<br><br>
+
+    จริง ๆ แล้วเหตุผลทั้งหมด<br>
+    สรุปได้แค่ข้อเดียว<br><br>
+
+    <strong>
+    เพราะเธอเป็นเธอ ⭐
+    </strong>
+    <br><br>
+
+    ขอบคุณที่เข้ามาเป็นความทรงจำดี ๆ ของเรานะ 🌷
+    </p>
+
+    <a href="menu.html" class="final-btn">
+        🏠 MENU 🏠
+    </a>
+
+</div>
+
+<script>
+
+const reasons = [
+
+"เพราะเธอทำให้วันธรรมดาเป็นวันที่พิเศษ",
+
+"เพราะรอยยิ้มของเธอน่ารักมาก",
+
+"เพราะเธอเป็นตัวของตัวเอง",
+
+"เพราะอยู่กับเธอแล้วสบายใจ",
+
+"เพราะเธอเก่งกว่าที่ตัวเองคิด",
+
+"เพราะเธอคือความทรงจำดี ๆ",
+
+"เพราะเธอทำให้เรายิ้มได้เสมอ"
+
+];
+
+let opened = 0;
+
+function showReason(star,index){
+
+if(!star.classList.contains("clicked")){
+
+    star.classList.add("clicked");
+    opened++;
+
+}
+
+document.getElementById("reasonText").innerText =
+reasons[index];
+
+document.getElementById("card").style.display="block";
+
+if(opened === 7){
+
+setTimeout(()=>{
+
+document.getElementById("final").style.display="flex";
+
+},1000);
+
+}
+
+}
+
+function closeCard(){
+
+document.getElementById("card").style.display="none";
+
+}
+
+for(let i=0;i<30;i++){
+
+let s=document.createElement("div");
+
+s.className="twinkle";
+s.innerHTML="✦";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.animationDelay=Math.random()*2+"s";
+
+document.body.appendChild(s);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #ffe4ec,
+        #fff5f8,
+        #f0ffff
+    );
+    font-family:'Mali', cursive;
+}
+
+.container{
+    text-align:center;
+    padding:20px;
+}
+
+h1{
+    color:#ff7ca8;
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.flower{
+    width:280px;
+    max-width:80%;
+    margin:20px 0;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+p{
+    color:#777;
+    font-size:20px;
+}
+
+button{
+    margin-top:15px;
+    border:none;
+    padding:12px 30px;
+    border-radius:30px;
+    background:#ff9fc2;
+    color:white;
+    font-size:18px;
+    font-family:'Mali', cursive;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.hidden{
+    opacity:0;
+    margin-top:20px;
+    transition:.5s;
+}
+
+.show{
+    opacity:1;
+    color:#ff6f9e;
+    font-size:20px;
+}
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:white;
+    text-decoration:none;
+    color:#ff7ca8;
+    font-size:28px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}

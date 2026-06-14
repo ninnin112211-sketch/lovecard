@@ -1,0 +1,164 @@
+body {
+    font-family: 'Mali', cursive;
+    font-size: 18px;
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #f7c5da,
+        #eec7d1,
+        #ebcfd5,
+        #e0f7fa
+    );
+
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#nextBtn {
+    background: linear-gradient(135deg, #ff9acb, #ffd6e7);
+    color: white;
+
+    border: none;
+    border-radius: 25px;
+
+    padding: 12px 22px;
+    font-size: 16px;
+    font-family: 'Mali', cursive;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+.container {
+    margin-bottom: 10px;
+}
+#scratchCard {
+    touch-action: none;
+}
+
+.scratch-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+
+    transform: scale(0.8);
+    transform-origin: center;
+
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+    overflow: hidden; /* เปลี่ยนจาก visible → ทำให้ดูเนียนขึ้น */
+}
+/* รูป */
+.hidden-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border: 8px solid white;
+    border-radius: 20px;
+
+    box-sizing: border-box;  /* ✔ สำคัญมาก */
+}
+
+/* canvas */
+#scratchCard {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* 💖 หัวใจลอย */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.hearts span {
+    position: absolute;
+    bottom: -60px;
+    font-size: 20px;
+    color: white;
+    opacity: 0.8;
+
+    animation: floatUp 10s linear infinite;
+    will-change: transform;
+}
+
+/* จัดให้อยู่แถวกลางหน้ามากขึ้น */
+.hearts span:nth-child(1) {
+    left: 35%;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    left: 42%;
+    animation-delay: 1.5s;
+}
+
+.hearts span:nth-child(3) {
+    left: 50%;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(4) {
+    left: 58%;
+    animation-delay: 4.5s;
+}
+
+.hearts span:nth-child(5) {
+    left: 65%;
+    animation-delay: 6s;
+}
+
+/* ลอยแบบนุ่ม ๆ */
+@keyframes floatUp {
+    0% {
+        transform: translate(0, 0) scale(0.8);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate(-10px, -25vh);
+    }
+
+    50% {
+        transform: translate(10px, -50vh);
+    }
+
+    75% {
+        transform: translate(-8px, -80vh);
+    }
+
+    100% {
+        transform: translate(8px, -120vh) scale(1.2);
+        opacity: 0;
+    }
+}

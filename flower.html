@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รับดอกไม้</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="flower.css">
+</head>
+
+<body>
+
+    <!-- ปุ่มกลับ -->
+    <a href="menu.html" class="back-btn">←</a>
+
+    <div class="container">
+
+        <h1>รับดอกไม้ ! 🌷</h1>
+
+        <img src="flower.png" alt="ดอกไม้" class="flower">
+
+        <p>เรามีดอกไม้มาฝากเธอนะะะ ! 💖</p>
+
+        <button onclick="showMessage()">รับดอกไม้</button>
+
+        <div id="message" class="hidden">
+            🌷 ส่งมอบดอกไม้ให้คนพิเศษเรียบร้อยแล้ว 💕
+        </div>
+
+    </div>
+
+<script>
+function showMessage(){
+    document.getElementById("message").classList.add("show");
+}
+</script>
+
+</body>
+</html>

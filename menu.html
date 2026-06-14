@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+
+  <style>
+    body{
+      font-family: 'Mali', cursive;
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffd1dc, #ffeef3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1{
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .menu{
+      display: grid;
+      grid-template-columns: repeat(2, 150px);
+      gap: 20px;
+    }
+
+    .card{
+      width: 150px;
+      height: 150px;
+      background: #ff5c8a;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card:hover{
+      transform: scale(1.05);
+    }
+
+    .icon{
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+<h1>💖 เลือกเมนู 💖</h1>
+
+<div class="menu">
+
+  <div class="card" onclick="location.href='flower.html'">
+    <div class="icon">🐻</div>
+    <div>ของขวัญสำหรับคนเก่ง</div>
+  </div>
+
+  <div class="card" onclick="location.href='memory.html'">
+    <div class="icon">📷</div>
+    <div>ภาพความทรงจำ</div>
+  </div>
+
+  <div class="card" onclick="location.href='letter.html'">
+    <div class="icon">💌</div>
+    <div>ถึงเธอ</div>
+  </div>
+
+  <div class="card" onclick="location.href='reason.html'">
+    <div class="icon">🌷</div>
+    <div>เหตุผลที่รักเธอ</div>
+  </div>
+
+</div>
+
+</body>
+</html>
