@@ -49,8 +49,13 @@ function scratch(x, y) {
     ctx.arc(x, y, 35, 0, Math.PI * 2);
     ctx.fill();
 
+    // 💖 ให้ข้อความหายทันทีเมื่อเริ่มขูด
+    const text = document.querySelector(".scratch-text");
+    if (text) text.classList.add("hide");
+
     checkScratch();
 }
+
 
 // สำหรับมือถือ
 function scratchTouch(e) {
@@ -77,11 +82,14 @@ function checkScratch() {
 
     const percent = (transparent / (canvas.width * canvas.height)) * 100;
 
-    if (percent > 70 && !isDone) {
-        isDone = true;
+if (percent > 70 && !isDone) {
+    isDone = true;
 
-        setTimeout(() => {
-            window.location.href = "password.html";
-        }, 500);
-    }
+    // 💖 ทำให้ข้อความหาย
+    document.querySelector(".scratch-text").classList.add("hide");
+
+    setTimeout(() => {
+        window.location.href = "password.html";
+    }, 500);
+}
 }
