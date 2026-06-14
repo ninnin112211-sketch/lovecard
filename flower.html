@@ -30,9 +30,34 @@
 
     </div>
 
+
 <script>
 function showMessage(){
     document.getElementById("message").classList.add("show");
+}
+function showMessage(){
+
+    document.getElementById("message").classList.add("show");
+
+    for(let i=0;i<30;i++){
+
+        let petal = document.createElement("div");
+
+        petal.className = "petal";
+        petal.innerHTML = "🌸";
+
+        petal.style.left = Math.random()*100 + "vw";
+        petal.style.animationDuration =
+        (3 + Math.random()*3) + "s";
+
+        document.body.appendChild(petal);
+
+        setTimeout(()=>{
+            petal.remove();
+        },6000);
+
+    }
+
 }
 </script>
 
