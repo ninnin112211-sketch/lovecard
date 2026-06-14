@@ -209,7 +209,13 @@ body{
 <div class="container">
 
 <div id="envelopeArea">
-    <div class="envelope" onclick="openLetter()">💌</div>
+    <div id="envelopeArea">
+    <img src="message.png"
+         class="envelope"
+         alt="message"
+         onclick="openLetter()">
+</div>
+
   
 </div>
 
@@ -275,6 +281,7 @@ typeWriter();
 
 }
 
+
 setInterval(() => {
 
     let heart = document.createElement("div");
@@ -295,6 +302,7 @@ setInterval(() => {
     }, 5000);
 
 }, 600);
+
 
 </script>
 
