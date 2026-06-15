@@ -177,24 +177,16 @@ body{
     }
 }
 @media (max-width:480px){
+
     .envelope{
-        width: 120px;
-        max-width: 60vw;
+        width: clamp(140px, 60vw, 200px);
+        height: auto;
+
+        display: block;
+        margin: 0 auto;
+
+        animation: bounce 2s infinite;
     }
-
-
-    .envelope{
-    width: 160px;
-    height: auto;
-    max-width: 70vw;
-
-    display: block;
-    margin: 0 auto;
-
-    cursor: pointer;
-    animation: bounce 2s infinite;
-    transition: 0.3s;
-}
 
     .card{
         width:95%;
@@ -210,9 +202,7 @@ body{
         left:10px;
         top:10px;
     }
-
 }
-
 </style>
 </head>
 
