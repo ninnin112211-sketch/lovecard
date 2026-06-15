@@ -63,6 +63,20 @@ body{
     margin-top:15px;
 }
 
+.envelope{
+    width: clamp(180px, 70vw, 260px);
+    height: auto;
+
+    display: block;
+    margin: 0 auto;
+
+    cursor: pointer;
+
+    animation: bounce 2s infinite;
+
+    transition: transform .25s ease;
+}
+
 .card{
     display:none;
     width:90%;
@@ -79,23 +93,17 @@ body{
     animation:pop .8s ease;
 }
 
-.envelope{
-    font-size:180px;
-    cursor:pointer;
-    transition:.3s;
-    animation:bounce 2s infinite;
-}
 
 .envelope:hover{
-    transform:scale(1.1);
+    transform: scale(1.05);
 }
 
 @keyframes bounce{
     0%,100%{
-        transform:translateY(0);
+        transform: translateY(0);
     }
     50%{
-        transform:translateY(-10px);
+        transform: translateY(-10px);
     }
 }
 @keyframes pop{
@@ -178,16 +186,6 @@ body{
 }
 @media (max-width:480px){
 
-    .envelope{
-        width: clamp(140px, 60vw, 200px);
-        height: auto;
-
-        display: block;
-        margin: 0 auto;
-
-        animation: bounce 2s infinite;
-    }
-
     .card{
         width:95%;
         padding:20px;
@@ -213,7 +211,6 @@ body{
 <div class="container">
 
 <div id="envelopeArea">
-    <div id="envelopeArea">
     <img src="jmm.png"
          class="envelope"
          alt="message"
