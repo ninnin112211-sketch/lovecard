@@ -177,10 +177,24 @@ body{
     }
 }
 @media (max-width:480px){
+    .envelope{
+        width: 120px;
+        max-width: 60vw;
+    }
+
 
     .envelope{
-        font-size:170px;
-    }
+    width: 160px;
+    height: auto;
+    max-width: 70vw;
+
+    display: block;
+    margin: 0 auto;
+
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    transition: 0.3s;
+}
 
     .card{
         width:95%;
