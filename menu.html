@@ -58,10 +58,21 @@
       transform: scale(1.05);
     }
 
-    .icon{
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
+.icon-img{
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+
+  margin-bottom: 10px;
+
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  padding: 8px;
+
+  display: block;
+
+  animation: float 2s ease-in-out infinite;
+}
     
   </style>
 </head>
@@ -73,22 +84,22 @@
 <div class="menu">
 
   <div class="card" onclick="location.href='flower.html'">
-    <div class="icon">🐻</div>
+    <img src="gift.png" class="icon-img">
     <div>ของขวัญสำหรับคนเก่ง</div>
   </div>
 
   <div class="card" onclick="location.href='memory.html'">
-    <div class="icon">📷</div>
+    <img src="camera.png" class="icon-img">
     <div>ภาพความทรงจำ</div>
   </div>
 
   <div class="card" onclick="location.href='letter.html'">
-    <div class="icon">💌</div>
+    <img src="jm.png" class="icon-img">
     <div>ถึงเธอ</div>
   </div>
 
   <div class="card" onclick="location.href='reason.html'">
-    <div class="icon">🌷</div>
+    <img src="cherry.png" class="icon-img">
     <div>เหตุผลที่รักเธอ</div>
   </div>
 
