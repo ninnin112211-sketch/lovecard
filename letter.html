@@ -19,16 +19,11 @@
 body{
     font-family:'Mali',cursive;
     min-height:100vh;
-    background:linear-gradient(
-        135deg,
-        #ffd6e7,
-        #fff6fa,
-        #eafcff
-    );
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background:linear-gradient(135deg,#ffd6e7,#fff6fa,#eafcff);
+
+    display:block;
     overflow-x:hidden;
+    text-align:center;
 }
 
 .back-btn{
@@ -49,13 +44,14 @@ body{
 
 .container{
     width:100%;
-    padding:20px;
+    min-height:100vh;
 
     display:flex;
     flex-direction:column;
+    justify-content:center;
     align-items:center;
 
-    text-align:center;
+    padding:20px;
 }
 
 .open-text{
@@ -79,6 +75,7 @@ body{
 
 .card{
     display:none;
+
     width:90%;
     max-width:500px;
 
@@ -91,7 +88,11 @@ body{
     box-shadow:0 10px 30px rgba(0,0,0,.1);
 
     animation:pop .8s ease;
+
+    text-align:center;
 }
+
+
 
 
 .envelope:hover{
@@ -210,25 +211,20 @@ body{
 
 <div class="container">
 
-<div id="envelopeArea">
-    <img src="jmm.png"
-         class="envelope"
-         alt="message"
-         onclick="openLetter()">
-</div>
+    <div id="envelopeArea">
+        <img src="jmm.png"
+             class="envelope"
+             onclick="openLetter()">
+    </div>
 
-  
-</div>
+    <div class="card" id="card">
+        <h2>ถึงเธอ 💖</h2>
+        <div id="message"></div>
 
-<div class="card" id="card">
-    <h2>ถึงเธอ 💖</h2>
-
-    <div id="message"></div>
-
-<button id="musicBtn"
-        onclick="location.href='music.html'">
-    🎧 กดตรงนี้สิ...
-</button>
+        <button id="musicBtn" onclick="location.href='music.html'">
+            🎧 กดตรงนี้สิ...
+        </button>
+    </div>
 
 </div>
 
